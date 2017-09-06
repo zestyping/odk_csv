@@ -1,7 +1,8 @@
-# ODK CSV converter
+# ODK CSV converter, a QGIS plugin
 
-Converts CSV columns containing GPS data as produced by ODK Collect
-into WKT format (readable by QGIS).
+Converts CSV files from ODK Collect so they can be read directly by QGIS.
+
+When an ODK form contains a "GeoTrace" question, ODK Collect stores the collected trace in a format that QGIS doesn't understand.  This plugin reads CSV files that were downloaded from ODK Collect and converts the GeoTrace data therein into WKT format, which QGIS can read directly.
 
 ## How to install
 
@@ -11,7 +12,13 @@ into WKT format (readable by QGIS).
 
 3. Restart QGIS.
 
-4. In Plugins > Manage Plugins..., type "odk" in the search box, find the "ODK CSV converter" plugin, and click its check box to turn it on.
+4. Go to **Plugins** > **Manage and Install Plugins...** and wait a moment for the list of plugins to appear.  Type "odk" in the search box, find the "ODK CSV converter" plugin in the list, and click its check box to enable it.
+
+## How to use
+
+When this plugin is installed and enabled, you'll see a new "ODK -> QGIS" button on your toolbar.  Click the button, then select a CSV file that was downloaded from ODK Aggregate or KoboToolbox.  The plugin will then write out a new converted CSV file, which you can load into QGIS with the "Add Delimited Text Layer" button.
+
+The converted file will be given a name ending in `.qgis.csv`.  For example, if the input file is named `carrots.csv`, then the converted file will be named `carrots.qgis.csv`.
 
 ## Open source license
 
